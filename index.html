@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Define o conjunto de caracteres como UTF-8 para garantir compatibilidade com caracteres especiais -->
     <meta charset="UTF-8" />
+    
+    <!-- Define o título da página, que aparecerá na aba do navegador -->
     <title>Menu Responsivo</title>
+    
+    <!-- 
+      A meta tag "viewport" ajusta a escala da página para que fique adequada em diferentes dispositivos,
+      como smartphones e tablets, garantindo a responsividade.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Link para o arquivo externo de estilos CSS, que irá formatar o layout da página -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  
   <body>
+    <!-- 
+      Wrapper principal do menu, onde todo o conteúdo do menu de navegação será inserido. 
+      Isso ajuda na organização e estilo do layout.
+    -->
     <div class="menu__wrapper">
+      <!-- Barra de navegação que contém o logotipo e o menu -->
       <div class="menu__bar">
+        <!-- 
+          Link que redireciona para a página inicial. Contém o logotipo da empresa/site.
+          O logotipo é carregado de "assets/logo.png".
+        -->
         <a href="#" title="Logo">
           <img class="logo" src="assets/logo.png" title="Logo" alt="Logo" />
         </a>
+
+        <!-- 
+          Ícone do menu no formato de "hambúrguer" (três linhas horizontais).
+          Esse ícone será clicado em dispositivos móveis para abrir o menu.
+          O evento "onclick" chama a função JavaScript "toggleMenu(this)" para abrir/fechar o menu.
+        -->
         <img
           class="menu-icon"
           src="assets/burger-menu.svg"
@@ -19,6 +45,11 @@
           alt="Burger Menu"
           onclick="toggleMenu(this)"
         />
+        
+        <!-- 
+          Lista de navegação com quatro itens: Home, Blog, Sobre, e Fale Conosco.
+          Esses itens poderiam ser links para diferentes seções do site.
+        -->
         <ul class="navigation">
           <li>Home</li>
           <li>Blog</li>
@@ -27,6 +58,8 @@
         </ul>
       </div>
     </div>
+    
+    <!-- Inclusão do arquivo JavaScript que contém a função "toggleMenu" e outras interações do site -->
     <script src="script.js"></script>
   </body>
 </html>

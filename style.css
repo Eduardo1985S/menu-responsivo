@@ -1,139 +1,155 @@
+/* Importa a fonte "Mulish" do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
+/* Define variáveis CSS (custom properties) que podem ser reutilizadas no código */
 :root {
-    --primary: #ffbd59; ;
-    --primary-hover: #CD7D7C;                
-    --secondary: #EFD0F8;
-    --secondary-hover: #B8A1D9;
-    --aura: #9265CA80;
-    --background: #261E5A;
-    --navbar-height: 4.75rem;
+    --primary: #ffbd59; /* Cor principal (amarelo claro) */
+    --primary-hover: #CD7D7C; /* Cor ao passar o mouse sobre o item principal */
+    --secondary: #EFD0F8; /* Cor secundária */
+    --secondary-hover: #B8A1D9; /* Cor ao passar o mouse sobre o item secundário */
+    --aura: #9265CA80; /* Cor semitransparente */
+    --background: #261E5A; /* Cor de fundo (azul escuro) */
+    --navbar-height: 4.75rem; /* Altura da barra de navegação */
 }
 
+/* Remove o espaçamento e define o comportamento de box-sizing em todos os elementos */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Mulish, sans-serif;
+    box-sizing: border-box; /* Inclui bordas e preenchimento no cálculo da largura/altura */
+    font-family: Mulish, sans-serif; /* Aplica a fonte Mulish */
 }
 
+/* Estilo de fundo da página com uma imagem */
 .background {
     display: block;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(assets/universe.jpg);
-    opacity: 0.5;
-    z-index: -1;
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100vw; /* Largura total da janela */
+    height: 100vh; /* Altura total da janela */
+    background-image: url(assets/universe.jpg); /* Imagem de fundo */
+    opacity: 0.5; /* Transparência da imagem */
+    z-index: -1; /* Coloca o fundo atrás de outros elementos */
+    background-size: cover; /* A imagem cobre todo o fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
 }
 
+/* Wrapper para o menu, permitindo flexbox layout */
 .menu__wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    z-index: 2;
+    display: flex; /* Cria um layout flexível */
+    position: relative; /* Posição relativa, para alinhamento */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    z-index: 2; /* Eleva o menu acima de outros elementos */
 }
 
+/* Estilo da barra de menu */
 .menu__bar {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding-right: 1.5rem;
-    gap: 2rem;
-    background-color: var(--background);
-    height: 3.75rem;
+    position: fixed; /* Barra fixa no topo */
+    width: 100%; /* Ocupa toda a largura */
+    display: flex; /* Layout flexível para alinhar itens horizontalmente */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    flex-direction: row; /* Alinha os itens em uma linha horizontal */
+    padding-right: 1.5rem; /* Espaço à direita */
+    gap: 2rem; /* Espaço entre os itens do menu */
+    background-color: var(--background); /* Cor de fundo da barra de menu */
+    height: 3.75rem; /* Define a altura da barra de menu */
 }
 
+/* Estilo do ícone de menu (hambúrguer) */
 .menu-icon {
-    cursor: pointer;
-    display: flex;
+    cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+    display: flex; /* Usa flexbox para o layout do ícone */
 }
 
+/* Estilo da lista de navegação */
 .navigation {    
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    gap: 2.5rem;
-    padding: 0;
-    background-color: var(--background);
-    font-weight: bold;
+    display: flex; /* Flexbox para organizar os itens */
+    flex-direction: row; /* Itens organizados em uma linha */
+    list-style-type: none; /* Remove os marcadores da lista */
+    gap: 2.5rem; /* Espaço entre os itens da navegação */
+    padding: 0; /* Remove o preenchimento padrão */
+    background-color: var(--background); /* Fundo da barra de navegação */
+    font-weight: bold; /* Negrito para os itens */
 }
 
+/* Estilo do logotipo */
 .logo {
-    margin-left: 1rem;
-    width: 8rem;
-    height: 8rem;
-    cursor: pointer;
-    isolation: isolate;
-    margin-top: 1rem;
+    margin-left: 1rem; /* Margem à esquerda */
+    width: 8rem; /* Largura do logotipo */
+    height: 8rem; /* Altura do logotipo */
+    cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+    isolation: isolate; /* Isola o contexto de empilhamento */
+    margin-top: 1rem; /* Margem superior */
 }
 
+/* Animação de fade-in */
 @keyframes fade {
-    0% { opacity: 0 }
-    100% { opacity: 1 }
+    0% { opacity: 0 } /* Começa invisível */
+    100% { opacity: 1 } /* Fica visível */
 }
-                    
+
+/* Estilo dos itens da lista de navegação */
 .navigation > li {
-  display: flex;
-  position: relative;
-  padding: 0;
-  color: white;
-  cursor: pointer;
-  width: max-content;
-  transition: all 0.2s;
+  display: flex; /* Layout flexível */
+  position: relative; /* Posição relativa para permitir o uso de pseudo-elementos */
+  padding: 0; /* Remove o preenchimento */
+  color: white; /* Cor branca para o texto */
+  cursor: pointer; /* Mostra o ponteiro ao passar o mouse */
+  width: max-content; /* Largura mínima necessária para o conteúdo */
+  transition: all 0.2s; /* Transição suave para os efeitos */
 }
 
+/* Efeito de hover para os itens da navegação */
 .navigation > li:hover {
-    color: var(--primary)
+    color: var(--primary); /* Muda a cor do texto ao passar o mouse */
 }
 
+/* Estilo da linha de destaque animada sob os itens de navegação */
 .navigation > li::after {
-  /* content: ''; */
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 0.125rem;
-  bottom: -0.3rem;
-  left: 0;
-  background: linear-gradient(90deg, var(--background), var(--primary), var(--background));
-  transform-origin: bottom center;
-  transition: transform 0.3s ease-out;
+  position: absolute; /* Posição absoluta em relação ao item pai */
+  width: 100%; /* Largura total do item */
+  transform: scaleX(0); /* Inicialmente a linha está oculta */
+  height: 0.125rem; /* Altura da linha */
+  bottom: -0.3rem; /* Posiciona a linha abaixo do texto */
+  left: 0; /* Alinha a linha à esquerda */
+  background: linear-gradient(90deg, var(--background), var(--primary), var(--background)); /* Gradiente da linha */
+  transform-origin: bottom center; /* Origem da animação da linha */
+  transition: transform 0.3s ease-out; /* Animação de transição suave */
 }
 
+/* Efeito de hover para animar a linha */
 .navigation > li:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
+  transform: scaleX(1); /* Aumenta a linha em largura */
+  transform-origin: bottom center; /* A linha cresce a partir do centro inferior */
 }
 
+/* Estilos para telas maiores (mais de 600px de largura) */
 @media (min-width: 600px) {
     .menu-icon {
-        display: none;
+        display: none; /* Esconde o ícone de menu em telas maiores */
     }
 }
 
+/* Estilos para telas menores (menos de 600px de largura) */
 @media (max-width: 600px) {
     .navigation {
-        display: none;
-        font-size: 1.5rem;
+        display: none; /* Esconde a navegação em telas menores */
+        font-size: 1.5rem; /* Aumenta o tamanho da fonte em dispositivos móveis */
     }
     .menu-icon {
-        display: block;
+        display: block; /* Mostra o ícone de menu em telas menores */
     }
 
+    /* Estilos para o menu de navegação em dispositivos móveis */
     .navigation--mobile {
-        top: var(--navbar-height);
-        position: absolute;
-        display: flex;
-        padding: 2.5rem;
-        background-color: var(--background);
-        width: 100%;
-        height: calc(100vh - var(--navbar-height));
-        gap: 0.5rem;
-        flex-direction: column;
-        animation: fade 1s ease-in 1 forwards;
+        top: var(--navbar-height); /* Posiciona logo abaixo da barra de navegação */
+        position: absolute; /* Posição absoluta */
+        display: flex; /* Usa flexbox */
+        padding: 2.5rem; /* Espaçamento interno */
+        background-color: var(--background); /* Fundo do menu */
+        width: 100%; /* Largura total */
+        height: calc(100vh - var(--navbar-height)); /* Altura dinâmica da navegação */
+        gap: 0.5rem; /* Espaçamento entre os itens */
+        flex-direction: column; /* Alinha os itens em coluna */
+        animation: fade 1s ease-in 1 forwards; /* Animação de fade-in */
     }
 }
